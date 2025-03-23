@@ -600,15 +600,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/date-fns@npm:^2.6.3":
-  version: 2.6.3
-  resolution: "@types/date-fns@npm:2.6.3"
-  dependencies:
-    date-fns: "npm:*"
-  checksum: 10/7b9c1bc024680931274f6f2f08be160e841e5ba7bc1eba4bc95ab8f49faeb83c332ef1d76a5e0080278a03e5be6e2a3417cb7b1178af4b61023f8f7d1c4b9401
-  languageName: node
-  linkType: hard
-
 "@types/estree@npm:^1.0.6":
   version: 1.0.6
   resolution: "@types/estree@npm:1.0.6"
@@ -1185,7 +1176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:*, date-fns@npm:^4.1.0":
+"date-fns@npm:^4.1.0":
   version: 4.1.0
   resolution: "date-fns@npm:4.1.0"
   checksum: 10/d5f6e9de5bbc52310f786099e18609289ed5e30af60a71e0646784c8185ddd1d0eebcf7c96b7faaaefc4a8366f3a3a4244d099b6d0866ee2bec80d1361e64342
@@ -2829,7 +2820,6 @@ __metadata:
     "@eslint/eslintrc": "npm:^3"
     "@popperjs/core": "npm:^2.11.8"
     "@tailwindcss/postcss": "npm:^4"
-    "@types/date-fns": "npm:^2.6.3"
     "@types/lodash": "npm:^4"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
