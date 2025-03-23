@@ -31,15 +31,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Setup Yarn
-        run: corepack prepare yarn@stable --activate
+          cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
