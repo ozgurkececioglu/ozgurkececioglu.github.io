@@ -46,7 +46,11 @@ export const ExperiencesTable = ({ data }: Props) => {
                 </span>
               </div>
 
-              <div>{item.description}</div>
+              <ul className="list-disc list-inside ml-4 text-gray-400">
+                {item.description.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
           );
         })}

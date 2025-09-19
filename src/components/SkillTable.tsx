@@ -13,7 +13,7 @@ export const SkillTable = ({ data }: Props) => {
       {times(3, (i) => (
         <div key={i} className="flex flex-col gap-1">
           {data.slice(i * rows, (i + 1) * rows).map((skill) => (
-            <div key={skill.title} className="flex italic gap-1 h-12">
+            <div key={skill.title} className="flex italic gap-1 h-16">
               <div className="flex-2/3 p-1 bg-gray-800 px-2 flex flex-col justify-center">
                 {skill.title}
                 {skill.subtitle && (

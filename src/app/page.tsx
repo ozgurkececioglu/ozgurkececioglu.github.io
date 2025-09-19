@@ -1,7 +1,9 @@
 import { ActionDropdown } from "@/components/ActionDropdown";
+import { ContactInfo } from "@/components/ContactInfo";
 import { ExperiencesTable } from "@/components/ExperiencesTable";
 import { SectionContent } from "@/components/SectionContent";
 import { SectionTitle } from "@/components/SectionTitle";
+import { SkillsLegend } from "@/components/SkillsLegend";
 import { SkillTable } from "@/components/SkillTable";
 import { experiences } from "@/data/Experiences";
 import { skills } from "@/data/Skills";
@@ -11,25 +13,34 @@ const dateOfBirth = new Date("1989-02-06");
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen p-4 gap-4 font-figtree font-bold">
-      <div className="bg-red-500 rounded p-4 flex items-center justify-center relative">
+    <main className="flex flex-col min-h-screen p-4 gap-4 font-figtree font-bold" role="main">
+      <header className="bg-red-500 rounded p-4 flex items-center justify-center relative">
         <h1 className="text-white text-3xl">
           Ozgur Kececioglu (Sr. Frontend Engineer)
         </h1>
 
         <ActionDropdown />
-      </div>
+      </header>
 
-      <SectionTitle>
-        Born {format(dateOfBirth, "d.M.yy")} (Age{" "}
-        {differenceInYears(new Date(), dateOfBirth)}). Turkish.
-      </SectionTitle>
+      <section aria-labelledby="personal-info" className="mb-4">
+        <h2 id="personal-info" className="sr-only">Personal Information</h2>
+        <SectionTitle>
+          Born {format(dateOfBirth, "d.M.yy")} (Age{" "}
+          {differenceInYears(new Date(), dateOfBirth)}). Turkish.
+        </SectionTitle>
+      </section>
 
-      <SkillTable data={skills} />
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading" className="sr-only">Technical Skills</h2>
+        <SkillTable data={skills} />
+        <SkillsLegend />
+      </section>
 
       <div className="grid grid-cols-2 gap-4">
-        <div className="flex flex-col">
-          <SectionTitle>Background</SectionTitle>
+        <section className="flex flex-col" aria-labelledby="background-heading">
+          <h2 id="background-heading">
+            <SectionTitle>Background</SectionTitle>
+          </h2>
 
           <SectionContent>
             I graduated from Hacettepe University, Department of Computer
@@ -44,7 +55,9 @@ const Home = () => {
             optimizing CI/CD pipelines, and improving visual testing.
           </SectionContent>
 
-          <SectionTitle>Interests</SectionTitle>
+          <h3>
+            <SectionTitle>Interests</SectionTitle>
+          </h3>
 
           <SectionContent>
             I love to learn new technologies and improve myself. I am interested
@@ -52,11 +65,16 @@ const Home = () => {
             most fun from unblocking my team members and helping them to improve
             their skills.
           </SectionContent>
-        </div>
 
-        <ExperiencesTable data={experiences} />
+          <ContactInfo />
+        </section>
+
+        <section aria-labelledby="experience-heading">
+          <h2 id="experience-heading" className="sr-only">Professional Experience</h2>
+          <ExperiencesTable data={experiences} />
+        </section>
       </div>
-    </div>
+    </main>
   );
 };
 
